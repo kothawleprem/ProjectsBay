@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<center><h1  style="font-family: 'Vollkorn', serif;" >Profile</h1></center>
+
+<div class="container px-1 py-5 mx-auto" style="font-family: 'Domine', serif;">
+    <div class="row">
+        <div class="col-md-6 text-center">
+                <form  method="POST" class="form-card">
+                {% csrf_token %}
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Name<span class="text-danger"> *</span></label>{{form.name}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Phone<span class="text-danger"> *</span></label> {{form.phone}}  </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6  flex-column d-flex"> <label class="form-control-label px-3">Address<span class="text-danger"> *</span></label> {{form.address}}  </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Age<span class="text-danger"> *</span></label> {{form.age}} </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Profession<span class="text-danger"> *</span></label> {{form.profession}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Organization<span class="text-danger"> *</span></label> {{form.organization}} </div>
+                    </div>
+                     <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Github<span class="text-danger"> *</span></label> {{form.github}} </div>
+                          <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Portfolio Link<span class="text-danger"> *</span></label> {{form.portfolio}} </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Tagline/Short Intro<span class="text-danger"> *</span></label> {{form.ctag}} </div>
+                          
+                    </div>
+                    <div class="row justify-content-center">
+                        <div class="form-group col-sm-6"> <button type="submit" class="btn-block btn-primary">Submit</button> </div>
+                    </div>
+                </form>
+            </div>
+        <div class="col-md-6">
+        <img src="/media/profile.png" style='width:500px' alt="">
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

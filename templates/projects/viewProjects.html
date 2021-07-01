@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for data in profile %}
+{% comment %} {% if forloop.counter == 1 %} {% endcomment %}
+<h3>{{profile}}</h3>
+{% comment %} {% endif %} {% endcomment %}
+{% endfor %}
+{% for project in projects %}
+<h2>{{project.title}}</h2>
+<a href="{% url 'onlyProject' project.id %}" >{{project.id}}</a>
+{% endfor %}
+{% endblock body %}

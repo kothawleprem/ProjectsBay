@@ -37,7 +37,7 @@ source envname/bin/activate
 Step 3: Clone this repository:
 
 ```
-git clone <https://github.com/kothawleprem/dailydriver.git>
+git clone <https://github.com/kothawleprem/ProjectsBay.git>
 
 ```
 

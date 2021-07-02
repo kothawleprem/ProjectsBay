@@ -91,7 +91,7 @@ DATABASES = {
 }
 
 # Local
-# DATABASES = {
+#DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',
 #         'NAME': 'ProjectsBayLocal',

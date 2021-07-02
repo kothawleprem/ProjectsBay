@@ -66,9 +66,8 @@ python manage.py runserver
 
 ```
 
-Locally available at http://127.0.0.1:8000/
+*Locally available at http://127.0.0.1:8000/*
 
-# 👋 ProjectsBay
+*Visit the website : https://projectsbay.herokuapp.com/*
 
-### Some Screenshots from the deployed website.
-
+*Thank You!*

@@ -26,9 +26,9 @@
     <h4 style="font-family: 'Roboto Slab', serif;color: black;">{% if p.achievements|length == 0 %}{% else %}  <u>Achievements :</u> {{p.achievements}}{% endif %}  </h4>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;"> {% if p.tech is None %}{% else %}  <u>Technology :</u> {{p.tech}}{% endif %} </h4>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf1 is None %} {% else %}{{p.opf1}}{% endif %}  {% if p.opfl1 is None %}{% else %}:</u><a href="{{p.opfl1}}">{{p.opfl1}}</a>{% endif %}</h4>
-    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf2 is None %}{% else %}{{p.opf2}}{% endif %}  {% if p.opfl2 is None %}{% else %}:</u><a href="{{p.opfl2}}">{{p.opfl1}}</a>{% endif %}</h4>
-    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf3 is None %}{% else %}{{p.opf3}}{% endif %}  {% if p.opfl3 is None %}{% else %}:</u><a href="{{p.opfl3}}">{{p.opfl1}}</a>{% endif %}</h4>
-    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf4 is None %}{% else %}{{p.opf4}}{% endif %}  {% if p.opfl4 is None %}{% else %}:</u><a href="{{p.opfl4}}">{{p.opfl1}}</a>{% endif %}</h4>
+    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf2 is None %}{% else %}{{p.opf2}}{% endif %}  {% if p.opfl2 is None %}{% else %}:</u><a href="{{p.opfl2}}">{{p.opfl2}}</a>{% endif %}</h4>
+    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf3 is None %}{% else %}{{p.opf3}}{% endif %}  {% if p.opfl3 is None %}{% else %}:</u><a href="{{p.opfl3}}">{{p.opfl3}}</a>{% endif %}</h4>
+    <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.opf4 is None %}{% else %}{{p.opf4}}{% endif %}  {% if p.opfl4 is None %}{% else %}:</u><a href="{{p.opfl4}}">{{p.opfl4}}</a>{% endif %}</h4>
     <img src="{p.imgl}" alt="">
 </div>
 <br>

@@ -79,28 +79,28 @@ WSGI_APPLICATION = 'ProjectsBay.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 #Heroku - Deloyed
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'ProjectsBay',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT' : {
-        'host' : f"mongodb+srv://prem:{os.environ.get('mongo_projectsbay_password')}@clusterprojectsbay.ypqak.mongodb.net/ProjectsBay?retryWrites=true&w=majority"
-        }
-    }
-}
-
-# Local
-#DATABASES = {
+# DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',
-#         'NAME': 'ProjectsBayLocal',
+#         'NAME': 'ProjectsBay',
 #         'ENFORCE_SCHEMA': False,
 #         'CLIENT' : {
-#         'host' : f"mongodb+srv://prem:prem@projectsbaylocal.okp1d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+#         'host' : f"mongodb+srv://prem:{os.environ.get('mongo_projectsbay_password')}@clusterprojectsbay.ypqak.mongodb.net/ProjectsBay?retryWrites=true&w=majority"
 #         }
 #     }
 # }
+
+# Local
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME': 'ProjectsBayLocal',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT' : {
+        'host' : f"mongodb+srv://prem:prem@projectsbaylocal.okp1d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+        }
+    }
+}
 
 
 

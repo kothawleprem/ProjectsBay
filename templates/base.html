@@ -52,31 +52,31 @@ nav ul li :hover{
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" style="font-family: 'Playfair Display', serif;color:yellow">Navbar</a>
+    <a class="navbar-brand" href="#" style="font-family: 'Playfair Display', serif;color:yellow">ProjectsBay</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon" ></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+          <a class="nav-link active" aria-current="page" href="/" style="color: white;">Home</a>
         </li>
         {% if request.user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">My Projects</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'myProjects' %}" style="color: white;">My Projects</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">My Page</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'viewProjects' request.user.username %}" style="color: white;">My Page</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">Profile</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'profile' %}" style="color: white;">Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">Logout</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'logout' %}" style="color: white;">Logout</a>
         </li>
         {% else %}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="color: white;">Login</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'login' %}" style="color: white;">Login</a>
         </li>
         {% endif %}
         
@@ -87,9 +87,13 @@ nav ul li :hover{
   </div>
 </nav>
 
-   
-    {% block body %}
-    {% endblock body %}
+   <body style="background-color:#0033cc;">
+        {% block body %}
+        {% endblock body %}
+   </body>
+ 
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

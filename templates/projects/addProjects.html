@@ -2,56 +2,54 @@
 
 {% block body %}
 
-
+<div class="myconatiner" style="background-color:orange;">
 <center><h1  style="font-family: 'Vollkorn', serif;" >Add Project</h1></center>
 
-<div class="container px-1 py-5 mx-auto" style="font-family: 'Domine', serif;">
-    <div class="row">
-        <div class="col-md-6 text-center">
+<div class="container px-1 py-5 mx-auto" style="font-family: 'Domine', serif;color:white" >
                 <form  method="POST" class="form-card">
                 {% csrf_token %}
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">title<span class="text-danger"> *</span></label>{{form.title}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">tag<span class="text-danger"> *</span></label> {{form.tag}}  </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Title<span class="text-danger"> </span></label>{{form.title}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Tagline<span class="text-danger"> </span></label> {{form.tag}}  </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6  flex-column d-flex"> <label class="form-control-label px-3">description<span class="text-danger"> *</span></label> {{form.description}}  </div>
+                        <div class="form-group col-sm-6  flex-column d-flex"> <label class="form-control-label px-3">Description<span class="text-danger"> </span></label> <div class="div" style="width:200px;">{{form.description}} </div>  </div>
                        
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">created<span class="text-danger"> *</span></label> {{form.created}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">completed<span class="text-danger"> *</span></label> {{form.completed}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Created On<span class="text-danger"> </span></label> {{form.created}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Completed<span class="text-danger"> </span></label> {{form.completed}} </div>
                     </div>
                      <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">achievements<span class="text-danger"> *</span></label> {{form.achievements}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Achievements<span class="text-danger"> </span></label> {{form.achievements}} </div>
                        
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">tech<span class="text-danger"> *</span></label> {{form.tech}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Technology Used<span class="text-danger"> </span></label> {{form.tech}} </div>
                        
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">github<span class="text-danger"> *</span></label> {{form.github}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">live<span class="text-danger"> *</span></label> {{form.live}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Github Link<span class="text-danger"> </span></label> {{form.github}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Live Link<span class="text-danger"> </span></label> {{form.live}} </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opf1<span class="text-danger"> *</span></label> {{form.opf1}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opfl1<span class="text-danger"> *</span></label> {{form.opfl1}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 1<span class="text-danger"> </span></label> {{form.opf1}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 1 Link<span class="text-danger"> </span></label> {{form.opfl1}} </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opf2<span class="text-danger"> *</span></label> {{form.opf2}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opfl2<span class="text-danger"> *</span></label> {{form.opfl2}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 2<span class="text-danger"> </span></label> {{form.opf2}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 2 Link<span class="text-danger"> </span></label> {{form.opfl2}} </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opf3<span class="text-danger"> *</span></label> {{form.opf3}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opfl3<span class="text-danger"> *</span></label> {{form.opfl3}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 3<span class="text-danger"> *</span></label> {{form.opf3}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 3 Link<span class="text-danger"> *</span></label> {{form.opfl3}} </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opf4<span class="text-danger"> *</span></label> {{form.opf4}} </div>
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">opfl4<span class="text-danger"> *</span></label> {{form.opfl4}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 4<span class="text-danger"> </span></label> {{form.opf4}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Optional Field 4 Link<span class="text-danger"> </span></label> {{form.opfl4}} </div>
                     </div>
                     <div class="row justify-content-between text-left">
-                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Image Link<span class="text-danger"> *</span></label> {{form.imgl}} </div>
+                        <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Image Link<span class="text-danger"> </span></label> {{form.imgl}} </div>
                         
                     </div>
                     <div class="row justify-content-center">
@@ -59,11 +57,10 @@
                     </div>
                 </form>
             </div>
-        <div class="col-md-6">
-        <img src="/media/profile.png" style='width:500px' alt="">
-        </div>
-    </div>
+       
+    
 
+</div>
 </div>
 
 {% endblock %}

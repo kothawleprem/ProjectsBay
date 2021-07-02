@@ -13,6 +13,7 @@ urlpatterns = [
     path("myProjects",views.myProjects,name='myProjects'),
     path("user/<str:pk>",views.viewProjects,name='viewProjects'),
     path("project/<int:pid>",views.onlyProject,name='onlyProject'),
+    path('confirmDelete/<int:pid>',views.confirmDelete,name='confirmDelete'),
     path("delete/<int:pid>",views.delProjects,name='delProjects')
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

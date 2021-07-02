@@ -1,13 +1,52 @@
 {% extends 'base.html' %}
 
 {% block body %}
-{% for data in profile %}
-{% comment %} {% if forloop.counter == 1 %} {% endcomment %}
-<h3>{{profile}}</h3>
-{% comment %} {% endif %} {% endcomment %}
-{% endfor %}
-{% for project in projects %}
-<h2>{{project.title}}</h2>
-<a href="{% url 'onlyProject' project.id %}" >{{project.id}}</a>
-{% endfor %}
+
+<div class="mycontainer" style="background-color: whitesmoke;">
+    <div class="container">
+    {% for data in profile %}
+    <div class="row">
+        <div class="col-md-6" >
+            <h1>{{data.name}}, {{data.age}}</h1>
+            <h3>{{data.ctag}}</h3>
+            <h5>{{data.profession}} - {{data.organization}}</h5>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+        <h4>{{data.email}} <i class="fas fa-envelope"></i></h4>
+        <h4>{{data.phone}} <i class="fas fa-phone"></i></h4>
+        <h4>{{data.address}} <i class="fas fa-map-marker-alt"></i></h4>
+        <h4>{{data.portfolio}} <i class="fas fa-link"></i></h4>
+        <h4>{{data.github}} <i class="fab fa-github-square"></i></h4>
+        </div>
+    </div>
+    {% endfor %}
+    <br><br>
+    {% for project in projects %}
+    <div class="card" style="background-color: #ffffff; border-radius: 20px; border-color: blue;">
+        <div class="row">
+            <div class="col-md-4" style="border-radius: 10px;">
+                <br>
+                <center><img src="/media/Magnifier.png" alt="" style="width: 200px;"></center>
+    
+                <br>
+            </div>
+            <div class="col-md-8">
+                <br>
+                <h2>{{project.title}}</h2>
+                <h3>{{project.tag}}</h3>
+                
+                <h4>{{project.tech}}</h4>
+                <h4>{{project.achievements}}</h4>
+                <h4>{{project.live}}</h4>
+                <a class="btn btn-primary" href="{% url 'onlyProject' project.id %}" ">View Project</a>
+                <br><br>
+    
+            </div>
+        </div>
+    </div>
+    <br><br>
+    {% endfor %}
+    </div>
+</div>
+
 {% endblock body %}

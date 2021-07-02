@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Client(models.Model):
@@ -24,10 +25,10 @@ class Project(models.Model):
     client = models.ForeignKey(Client, on_delete=models.SET_NULL,null=True)
     title = models.CharField(max_length=200,null=True,blank=True)
     tag = models.CharField(max_length=200,null=True,blank=True)
-    description = models.CharField(max_length=200,null=True,blank=True)
+    description = RichTextField(null=True,blank=True)
     created = models.CharField(max_length=200,null=True,blank=True)
     completed = models.CharField(max_length=200,null=True,blank=True)
-    achievements = models.CharField(max_length=200,null=True,blank=True)
+    achievements = models.TextField(max_length=200,null=True,blank=True)
     tech = models.CharField(max_length=200,null=True,blank=True)
     github = models.CharField(max_length=200,null=True,blank=True)
     live = models.CharField(max_length=200,null=True,blank=True)

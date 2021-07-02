@@ -19,7 +19,7 @@ class ClientAddProject(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['title','tag','description','created','completed','achievements','tech','github','live','opf1','opfl1','opf2','opfl2','opf3','opfl3','opf4','opfl4','imgl']
-        widgets = {'title':forms.TextInput(),'tag':forms.TextInput(),'description':forms.TextInput(),'created':forms.TextInput(),'completed':forms.TextInput(),'achievements':forms.TextInput(),'tech':forms.TextInput(),'github':forms.TextInput(),
+        widgets = {'title':forms.TextInput(),'tag':forms.TextInput(),'description':forms.TextInput(),'created':forms.TextInput(),'completed':forms.TextInput(),'achievements':forms.Textarea(),'tech':forms.TextInput(),'github':forms.TextInput(),
         'live':forms.TextInput(),'opf1':forms.TextInput(),'opfl1':forms.TextInput(),'opf2':forms.TextInput(),'opfl2':forms.TextInput(),'opf3':forms.TextInput(),'opfl3':forms.TextInput(),'opf4':forms.TextInput(),'opfl4':forms.TextInput(),
         'imgl':forms.TextInput()}
 

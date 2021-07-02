@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{% for data in project %}
+<h2>Do you really want to delete {{data.title}} ?</h2>
+<a href="{% url 'delProjects' data.id %}">Yes</a>
+<a href="{% url 'myProjects' %}">No</a>
+{% endfor %}
+{% endblock body %}

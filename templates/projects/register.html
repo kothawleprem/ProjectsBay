@@ -7,14 +7,21 @@
     padding-left: 60px;
 }
 </style>
-<center>
-    <h1 style="font-family: 'Vollkorn', serif;">Register Now!</h1>
-</center>
 
-<div class="mycontainer">
+
+<div class="mycontainer" style="background-color: #70DDFF;">
+    <center>
+        <h1 style="font-family: 'Vollkorn', serif;">Register Now!</h1>
+    </center>
     <div class="row">
         <div class="col-md-6">
-            <div class="card" style="border-color: blue;border-radius: 10px;">
+            <center><img src="/media/register.png" style='height:600px' alt=""></center>
+            
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <br><br>
+            <div class="card" style="border-color: rgb(17, 0, 255);border-radius: 10px; padding-right: 60px;">
                 <br>
                 <form method="POST" class="form-group" style="padding-left: 10px;">
                     {% if messages %}
@@ -27,16 +34,16 @@
                     {{error}}
                     <button type="submit" class="btn btn-success">Register</button>
                 </form>
-                <div class="d-flex justify-content-start links" style="padding-bottom: 10px;padding-left: 10px;">
+                <div class="d-flex justify-content-start links" style="padding-bottom: 10px;">
                     Already have an account?
                     <a href="{% url 'login' %}" class="ml-2">Login</a>
                 </div>
             </div>
+            </div>
         </div>
-        <div class="col-md-6">
-            <img src="/media/register.png" style='width:500px' alt="">
-        </div>
+        
     </div>
+    <br><br><br>
 </div>
  
 {% endblock %}

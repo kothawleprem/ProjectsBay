@@ -4,9 +4,12 @@ from .forms import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login, logout
 import requests
+import os
 
 # Create your views here.
 def home(request):
+    pas = os.environ.get('EMAIL_PASSWORD')
+    print(pas)
     return render(request,'projects/home.html')
 
 def register(request):
@@ -99,13 +102,18 @@ def addProjects(request):
 
 def myProjects(request):
     usr = request.user
-    print(usr)
     projects = Project.objects.filter(user=usr)
-    print(projects)
     context = {
         'projects' : projects
     }
     return render(request,'projects/myProjects.html',context)
+
+def confirmDelete(request,pid):
+    project = Project.objects.filter(id=pid)
+    context = {
+        'project' : project
+    }
+    return render(request,'projects/confirmDelete.html',context)
 
 def delProjects(request,pid):
     Project.objects.filter(id=pid).delete()
@@ -115,6 +123,7 @@ def viewProjects(request,pk):
     cid = User.objects.filter(username=pk)
     projects = Project.objects.filter(user=cid[0])
     profile = Client.objects.filter(user=cid[0])
+    print(profile)
     context = {
         'profile' : profile,
         'projects' : projects

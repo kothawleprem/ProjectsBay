@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'projects',
+    'ckeditor',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [
@@ -78,7 +80,11 @@ WSGI_APPLICATION = 'ProjectsBay.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'ProjectsBayDB',
+        'NAME': 'ProjectsBay',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT' : {
+        'host' : f"mongodb+srv://prem:{os.environ.get('mongo_projectsbay_password')}@clusterprojectsbay.ypqak.mongodb.net/ProjectsBay?retryWrites=true&w=majority"
+        }
     }
 }
 

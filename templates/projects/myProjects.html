@@ -1,1 +1,36 @@
-onlyProject
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br><br>
+<center><a class="btn btn-warning col-sm-8" href="{% url 'addProjects' %}"> Add A Project </a></center>
+<br><br>
+
+<div class="container" >
+    {% for project in projects %}
+<div class="card" style="background-color: #ffffcc;">
+    <div class="row">
+        <div class="col-md-4" style="border-radius: 10px;">
+            <br>
+            <center><img src="/media/Magnifier.png" alt="" style="width: 200px;"></center>
+           
+        <br>
+        </div>
+        <div class="col-md-8">
+            <br>
+<h2>{{project.title}}</h2>
+<h3>{{project.tag}}</h3>
+<h4>{{project.tech}}</h4>
+<h4>{{project.achievements}}</h4>
+<h4>{{project.live}}</h4>
+<a class="btn btn-primary" href="{% url 'onlyProject' project.id %}">View Project</a>
+<a class="btn btn-primary" href="{% url 'confirmDelete' project.id %}">Delete Project</a>
+
+        </div>
+    </div>
+</div>
+<br><br>
+{% endfor %}
+</div>
+
+{% endblock body %}

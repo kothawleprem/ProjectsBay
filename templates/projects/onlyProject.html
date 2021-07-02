@@ -1,3 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
 {% for p in project %}
-{{p.title}}
+<br>
+<div class="container" style="background-color: white;border-radius: 15px;">
+    <h1>{{p.title}}</h1>
+    <h2>{{p.tag}}</h2>
+    <h3>{{p.created}} - {{p.completed}}</h3>
+    <h3>{{p.description | safe }}</h3>
+    <h3>{{p.achievements}}</h3>
+    <h3>{{p.tech}}</h3>
+</div>
 {% endfor %}
+
+
+
+
+{% endblock body %}
+

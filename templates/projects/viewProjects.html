@@ -10,7 +10,7 @@
         <div class="col-md-5" >
         
             <h1 style="font-family: 'Source Sans Pro', sans-serif;color: red;">{{data.name}} {% if data.age is None %}{% else %}, {{data.age}}{% endif %}</h1>
-            {% if data.ctag is None %}{% else %}<h3>{{data.ctag}}</h3>{% endif %}
+            {% if data.ctag is None %}{% else %}<h5>{{data.ctag}}</h5>{% endif %}
         
             <h5>{% if data.profession is None %}{% else %}{{data.profession}}{% endif %} {% if data.organization is None %}{% else %}{{data.organization}}{% endif %}</h5>
         </div>
@@ -18,11 +18,11 @@
         <img src="{{img}}" alt="" style="width:100px;border-radius:50px">
         </div>
         <div class="col-md-5" style="text-align: right;">
-        <h4>{% if data.email is None %}{% else %}{{data.email}} <i class="fas fa-envelope"></i>{% endif %} </h4>
-        <h4>{% if data.phone is None %}{% else %}{{data.phone}} <i class="fas fa-phone"></i>{% endif %} </h4>
-        <h4>{% if data.address is None %}{% else %}{{data.address}} <i class="fas fa-map-marker-alt">{% endif %} </i></h4>
-        <h4> {% if data.portfolio is None %}{% else %}{{data.portfolio}} <i class="fas fa-link"></i>{% endif %} </h4>
-        <h4> {% if data.github is None %}{% else %}{{data.github}} <i class="fab fa-github-square"></i>{% endif %}</h4>
+        <h5>{% if data.email is None %}{% else %}{{data.email}} <i class="fas fa-envelope"></i>{% endif %} </h5>
+        <h5>{% if data.phone is None %}{% else %}{{data.phone}} <i class="fas fa-phone"></i>{% endif %} </h5>
+        <h5>{% if data.address is None %}{% else %}{{data.address}} <i class="fas fa-map-marker-alt">{% endif %} </i></h5>
+        <h5> {% if data.portfolio is None %}{% else %}{{data.portfolio}} <i class="fas fa-link"></i>{% endif %} </h5>
+        <h5> {% if data.github is None %}{% else %}{{data.github}} <i class="fab fa-github-square"></i>{% endif %}</h5>
         </div>
     </div>
     {% endfor %}
@@ -32,7 +32,11 @@
         <div class="row">
             <div class="col-md-4" style="border-radius: 10px;">
                 <br>
+                {% if project.imgl is None %}
                 <center><img src="/media/Magnifier.png" alt="" style="width: 200px;"></center>
+                {% else %}
+                <center><img src="{{project.imgl}}" alt="" style="width: 200px;"></center>
+                {% endif %}
     
                 <br>
             </div>

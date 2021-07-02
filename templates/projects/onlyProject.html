@@ -14,12 +14,16 @@
 
     <h4 style="font-family: 'Roboto Slab', serif;color: black;">{% if p.created is None %}{% else %}{{p.created}}{% endif %} {% if p.completed is None %}{% else %} - {{p.completed}}{% endif %}</h4>
     <div>
-   <a class="btn btn-primary" href="{% if p.github is None %}{% else %}{{p.github}}{% endif %}">Github</a>
-    <a class="btn btn-primary" href="{% if p.live is None %}{% else %}{{p.live}}{% endif %}">Live</a>
+    {% if p.github is None %}{% else %}
+   <a class="btn btn-primary" href="{{p.github}}">Github</a>
+   {% endif %}
+    {% if p.live is None %}{% else %}
+    <a class="btn btn-primary" href="{{p.live}}">Live</a>
+    {% endif %}
     </div>
     <br>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;">{% if p.description is None %}{% else %}{{p.description | safe }}{% endif %}</h4>
-    <h4 style="font-family: 'Roboto Slab', serif;color: black;"> {% if p.achievements is None %}{% else %}  <u>Achievements :</u> {{p.achievements}}{% endif %}  </h4>
+    <h4 style="font-family: 'Roboto Slab', serif;color: black;">{% if p.achievements|length == 0 %}{% else %}  <u>Achievements :</u> {{p.achievements}}{% endif %}  </h4>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;"> {% if p.tech is None %}{% else %}  <u>Technology :</u> {{p.tech}}{% endif %} </h4>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.of1 is None %}{% else %}{{p.of1}}{% endif %}  {% if p.ofl1 is None %}{% else %}:</u>{{p.ofl1}}{% endif %}</h4>
     <h4 style="font-family: 'Roboto Slab', serif;color: black;"><u>{% if p.of2 is None %}{% else %}{{p.of2}}{% endif %}  {% if p.ofl2 is None %}{% else %}:</u>{{p.ofl2}}{% endif %}</h4>

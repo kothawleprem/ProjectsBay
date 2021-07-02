@@ -90,7 +90,7 @@ DATABASES = {
     }
 }
 
-# # Local
+# Local
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'djongo',

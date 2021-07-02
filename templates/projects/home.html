@@ -1,35 +1,39 @@
 {% extends 'base.html' %}
 {% block body %}
+<style>
+  @media (min-width: 300px){
+      :root { --width: 300px;}
+    }
+  @media (min-width: 1400px){
+      :root { --width: 500px;}
+    }
+</style>
  <!--Intro Section-->
 <div class="mycontainer" id="intro" style="background-color: #5352ED;">
   <div class="row">
     <div class="col-md-6">
-    <div class="text-area " style="padding-left: 100px;padding-top: 150px;color: white;">
+      <div class="text-area " style="padding-left: 50px;padding-top: 150px;color: white;">
      
-      <h1 style="font-family: 'Source Sans Pro', sans-serif;">Do you create a lot of Projects?</h1>
-      <h2 style="font-family: 'Source Sans Pro', sans-serif;">Share them with the world Now!</h2>
-      <h3><a class="btn btn-light" href="{% url 'myProjects' %}">Start Now</a></h3>
-      <h3><a class="btn btn-warning" href="#steps">What are the Steps?</a></h3>
-      <h3><a class="btn btn-info" href="#what">Tell more about ProjectsBay!</a></h3>
-      <br><br><br>
-      <h5 style="font-family: 'Source Sans Pro', sans-serif;">ProjectsBay - Only destination for all your Projects / Articles / Research Papers etc.</h5>
-      <br><br>
+        <h1 style="font-family: 'Source Sans Pro', sans-serif;">Do you create a lot of Projects?</h1>
+        <h2 style="font-family: 'Source Sans Pro', sans-serif;">Share them with the world Now!</h2>
+        <h3><a class="btn btn-light" href="{% url 'myProjects' %}">Start Now</a></h3>
+        <h3><a class="btn btn-warning" href="#steps">What are the Steps?</a></h3>
+        <h3><a class="btn btn-info" href="#what">Tell more about ProjectsBay!</a></h3>
+        <br><br><br>
+        <h5 style="font-family: 'Source Sans Pro', sans-serif;">ProjectsBay - Only destination for all your Projects / Articles / Research Papers etc.</h5>
+        <br><br>
       
         <div class="flowers">
-<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
-<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
-<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
-<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
-</div>
+          <img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+          <img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+          <img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+          <img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
         </div>
-      
-
+      </div>
     </div>
     <div class="col-md-6">
-      <center><img src="/media/intro_img.png" style="width: 475px;padding-top: 150px;" alt=""></center>
-      
-    
-    <br><br><br><br><br><br><br><br>
+      <center><img src="/media/intro_img.png" style="width: var(--width);padding-top: 150px;" alt=""></center>
+      <br><br><br><br><br><br><br><br>
     </div>
   </div>
 </div>
@@ -37,8 +41,7 @@
 <div class="mycontainer" id="what" style="background-color: #FF7F50;">
   <div class="row">
     <div class="col-md-6">
-      <center><img src="/media/Sample 13.png" alt="" style="width: 500px;padding-top: 120px;"></center>
-      
+      <center><img src="/media/Sample 13.png" alt="" style="width: var(--width);padding-top: 120px;"></center>
       <br><br><br><br><br><br>
     </div>
     <div class="col-md-6" style="color: white;">
@@ -64,7 +67,7 @@
       </h5>
       <a class="btn btn-primary" href="#steps">Show me the Steps!</a></center>
      
-      </div>
+    </div>
   </div>
 </div>
 <!--Steps-->
@@ -87,7 +90,7 @@
                 Complete and setup your Profile First.
               </li>
               <li>
-You are now ready to add your Projects.
+                You are now ready to add your Projects.
               </li>
             </ul> </p>
       </div>
@@ -143,9 +146,9 @@ You are now ready to add your Projects.
   <div class="row">
     <div class="col-md-6">
       <br><br><br><br>
-      <div class="text-area" style="padding-top: 50px;padding-left: 50px;">
+      <div class="text-area" style="padding-top: 50px;padding-left: 25px;">
         <center><h1  style="font-family: 'Source Sans Pro', sans-serif;" >About Me & This Project!</h1></center>
-        <h4 style="font-family: 'Roboto Slab', serif;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Project is being created in the 48 hours TECHNOTHON 1.0, A Hackathon Championship Organized by Amity University Mumbai.</h4>
+        <h4 style="font-family: 'Roboto Slab', serif;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Project is being created during TECHNOTHON 1.0, A Hackathon Championship Organized by Amity University Mumbai.</h4>
         
         <h5 style="font-family: 'Roboto Slab', serif;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           Myself Prem Kothawle,Tech enthusiast in love with Programming, currently pursuing Bachelors
@@ -156,7 +159,7 @@ You are now ready to add your Projects.
           <center>
           <a class="btn btn-primary" href="https://github.com/kothawleprem"><i class="fab fa-github-square"> </i>&nbsp;Github</a>
           <a class="btn btn-primary" href="https://in.linkedin.com/public-profile/in/premkothawle?challengeId=AQGGrVILuc7mNQAAAXdIXRqTv00S5rmv_j21Vz_wRu8nQDt14KyNpn4hUdXcizuLx17BkvKyp97b-AttVulTKk_tZaVB0qZbUg&submissionId=98038d91-ee5b-5e16-1547-bd78670a3a16"><i class="fab fa-linkedin"> </i>&nbsp;Linkedin</a>
-          <a class="btn btn-primary" href=""><i class="fab fa-product-hunt"> </i>&nbsp;ProjectsBay</a>
+          <a class="btn btn-primary" href="https://projectsbay.herokuapp.com/user/prem"><i class="fab fa-product-hunt"> </i>&nbsp;ProjectsBay</a>
           </center>
         </h5>
         
@@ -164,10 +167,10 @@ You are now ready to add your Projects.
      
     </div>
     <div class="col-md-6">
-    <img src="/media/about-me.png" alt="" style="width: 500px;">
-    </div>
+    <img src="/media/about-me.png" alt="" style="width: var(--width);">
   </div>
-  
 </div>
+  
+
 
 {% endblock body %}

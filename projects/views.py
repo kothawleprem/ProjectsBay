@@ -7,6 +7,8 @@ import requests
 import os
 
 from bs4 import BeautifulSoup
+from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def home(request):
@@ -40,10 +42,15 @@ def logoutView(request):
     logout(request)
     return redirect('login')
 
+@login_required(login_url='login')  
 def profile(request):
-    form = ClientProfileForm(instance=request.user)
+    idl = Client.objects.filter(user=request.user).values('id')
+    for j in idl:
+        idw = j['id']
+    instance = get_object_or_404(Client, id=idw)
+    form = ClientProfileForm(request.POST or None, instance=instance)
     if request.method == 'POST':
-        form = ClientProfileForm(request.POST, instance=request.user)
+        form = ClientProfileForm(request.POST, instance=instance)
         if form.is_valid():
             cid = User.objects.filter(username=request.user)
             Client.objects.filter(user=cid[0]).delete()
@@ -58,7 +65,7 @@ def profile(request):
             portfolio = form.cleaned_data['portfolio']
             email = request.user.email
             github = form.cleaned_data['github']
-            client_profile = Client(user=usr,name=name,phone=phone,age=age,address=address,profession=profession,organization=organization,ctag=ctag,portfolio=portfolio,email=email)
+            client_profile = Client(user=usr,name=name,phone=phone,age=age,address=address,profession=profession,organization=organization,ctag=ctag,portfolio=portfolio,email=email,github=github)
             client_profile.save()
             return redirect('home')
     context = {
@@ -66,6 +73,7 @@ def profile(request):
     }
     return render(request,'projects/profile.html',context)
 
+@login_required(login_url='login')  
 def addProjects(request):
     form = ClientAddProject(instance=request.user)
     if request.method == 'POST':
@@ -99,14 +107,28 @@ def addProjects(request):
     }
     return render(request,'projects/addProjects.html',context)
 
+@login_required(login_url='login')  
+def updateProject(request,id):
+    instance = get_object_or_404(Project, id=id)
+    form = ClientAddProject(request.POST or None, instance=instance)
+    if form.is_valid():
+        form.save()
+        return redirect ('myProjects')
+    context = {
+        'form' : form,
+    }
+    return render(request,'projects/updateProject.html',context)
+
+@login_required(login_url='login')  
 def myProjects(request):
     usr = request.user
-    projects = Project.objects.filter(user=usr)
+    projects = Project.objects.filter(user=usr).order_by('-id')
     context = {
         'projects' : projects
     }
     return render(request,'projects/myProjects.html',context)
 
+@login_required(login_url='login')  
 def confirmDelete(request,pid):
     project = Project.objects.filter(id=pid)
     context = {
@@ -114,13 +136,15 @@ def confirmDelete(request,pid):
     }
     return render(request,'projects/confirmDelete.html',context)
 
+@login_required(login_url='login')  
 def delProjects(request,pid):
     Project.objects.filter(id=pid).delete()
     return render(request,'projects/deleted.html')
 
+
 def viewProjects(request,pk):
     cid = User.objects.filter(username=pk)
-    projects = Project.objects.filter(user=cid[0])
+    projects = Project.objects.filter(user=cid[0]).order_by('-id')
     profile = Client.objects.filter(user=cid[0])
     try:
         github = Client.objects.filter(user=cid[0]).values('github')
@@ -132,7 +156,6 @@ def viewProjects(request,pk):
         img = avatar_url[4].get('src')
     except:
         img = "/media/profile.png"
-    print(img)
     context = {
         'profile' : profile,
         'projects' : projects,

@@ -12,7 +12,12 @@
     <div class="row">
         <div class="col-md-4" style="border-radius: 10px;">
             <br>
+            {% if project.imgl is None %}
             <center><img src="/media/Magnifier.png" alt="" style="width: 200px;"></center>
+            {% else %}
+            <center><img src="{{project.imgl}}" alt="" style="width: 200px;"></center>
+            {% endif %}
+            
            
         <br>
         </div>
@@ -24,6 +29,7 @@
 <h5 style="font-family: 'Roboto Slab', serif;color: black;">{% if project.achievements is None %}{% else %}{{project.achievements}}{% endif %}</h5>
 <h5 style="font-family: 'Roboto Slab', serif;color: black;"><a href="{% if project.live is None %}{% else %}{{project.live}}{% endif %}">{% if project.live is None %}{% else %}{{project.live}}{% endif %}</a></h5>
 <a class="btn btn-primary" href="{% url 'onlyProject' project.id %}">View Project</a>
+<a class="btn btn-primary" href="{% url 'updateProject' project.id %}">Update Project</a>
 <a class="btn btn-primary" href="{% url 'confirmDelete' project.id %}">Delete Project</a>
 
         </div>

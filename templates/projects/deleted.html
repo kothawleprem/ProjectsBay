@@ -1,5 +1,27 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h2>Project Deleted</h2>
+<style>
+  @media (min-width: 300px){
+      :root { --width: 300px;}
+    }
+  @media (min-width: 1400px){
+      :root { --width: 600px;}
+    }
+</style>
+<div class="mycontainer" style="background-color: #5352ED;">
+<br><br>
+<div class="row">
+<div class="col-md-6">
+<img src="/media/delete.png" alt="" style="width: var(--width);">
+</div>
+<div class="col-md-6">
+<br><br><br><br><br><br><br><br><br><br>
+<h1  style="font-family: 'Source Sans Pro', sans-serif;color:white;" >Project Deleted!</h1>
+<a class="btn btn-warning col-md-3"  href="{% url 'myProjects' %}">My Projects</a>
+</div>
+</div>
+<br><br><br>
+</div>
+
 {% endblock body %}

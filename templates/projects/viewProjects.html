@@ -21,8 +21,8 @@
         <h5>{% if data.email is None %}{% else %}{{data.email}} <i class="fas fa-envelope"></i>{% endif %} </h5>
         <h5>{% if data.phone is None %}{% else %}{{data.phone}} <i class="fas fa-phone"></i>{% endif %} </h5>
         <h5>{% if data.address is None %}{% else %}{{data.address}} <i class="fas fa-map-marker-alt">{% endif %} </i></h5>
-        <h5> {% if data.portfolio is None %}{% else %}{{data.portfolio}} <i class="fas fa-link"></i>{% endif %} </h5>
-        <h5> {% if data.github is None %}{% else %}{{data.github}} <i class="fab fa-github-square"></i>{% endif %}</h5>
+        <h5> {% if data.portfolio is None %}{% else %} <a href="{{data.portfolio}}">{{data.portfolio}}</a>  <i class="fas fa-link"></i>{% endif %} </h5>
+        <h5> {% if data.github is None %}{% else %} <a href="https://github.com/{{data.github}}">github.com/{{data.github}}</a>  <i class="fab fa-github-square"></i>{% endif %}</h5>
         </div>
     </div>
     {% endfor %}

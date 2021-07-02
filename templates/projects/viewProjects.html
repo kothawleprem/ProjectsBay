@@ -3,20 +3,26 @@
 {% block body %}
 
 <div class="mycontainer" style="background-color: whitesmoke;">
+<br>
     <div class="container">
     {% for data in profile %}
     <div class="row">
-        <div class="col-md-6" >
-            <h1>{{data.name}}, {{data.age}}</h1>
-            <h3>{{data.ctag}}</h3>
-            <h5>{{data.profession}} - {{data.organization}}</h5>
+        <div class="col-md-5" >
+        
+            <h1 style="font-family: 'Source Sans Pro', sans-serif;color: red;">{{data.name}} {% if data.age is None %}{% else %}, {{data.age}}{% endif %}</h1>
+            {% if data.ctag is None %}{% else %}<h3>{{data.ctag}}</h3>{% endif %}
+        
+            <h5>{% if data.profession is None %}{% else %}{{data.profession}}{% endif %} {% if data.organization is None %}{% else %}{{data.organization}}{% endif %}</h5>
         </div>
-        <div class="col-md-6" style="text-align: right;">
-        <h4>{{data.email}} <i class="fas fa-envelope"></i></h4>
-        <h4>{{data.phone}} <i class="fas fa-phone"></i></h4>
-        <h4>{{data.address}} <i class="fas fa-map-marker-alt"></i></h4>
-        <h4>{{data.portfolio}} <i class="fas fa-link"></i></h4>
-        <h4>{{data.github}} <i class="fab fa-github-square"></i></h4>
+        <div class="col-md-2">
+        <img src="{{img}}" alt="" style="width:100px;border-radius:50px">
+        </div>
+        <div class="col-md-5" style="text-align: right;">
+        <h4>{% if data.email is None %}{% else %}{{data.email}} <i class="fas fa-envelope"></i>{% endif %} </h4>
+        <h4>{% if data.phone is None %}{% else %}{{data.phone}} <i class="fas fa-phone"></i>{% endif %} </h4>
+        <h4>{% if data.address is None %}{% else %}{{data.address}} <i class="fas fa-map-marker-alt">{% endif %} </i></h4>
+        <h4> {% if data.portfolio is None %}{% else %}{{data.portfolio}} <i class="fas fa-link"></i>{% endif %} </h4>
+        <h4> {% if data.github is None %}{% else %}{{data.github}} <i class="fab fa-github-square"></i>{% endif %}</h4>
         </div>
     </div>
     {% endfor %}
@@ -32,12 +38,13 @@
             </div>
             <div class="col-md-8">
                 <br>
-                <h2>{{project.title}}</h2>
-                <h3>{{project.tag}}</h3>
+                <h2 style="font-family: 'Source Sans Pro', sans-serif;color: red;">{{project.title}}</h2>
                 
-                <h4>{{project.tech}}</h4>
-                <h4>{{project.achievements}}</h4>
-                <h4>{{project.live}}</h4>
+        
+                <h4 style="font-family: 'Roboto Slab', serif;color: black;">{% if project.tag is None %}{% else %}{{project.tag}}{% endif %}</h4>
+                <h5 style="font-family: 'Roboto Slab', serif;color: black;">{% if project.tech is None %}{% else %}{{project.tech}}{% endif %}</h5>
+                <h5 style="font-family: 'Roboto Slab', serif;color: black;">{% if project.achievements is None %}{% else %}{{project.achievements}}{% endif %}</h5>
+                <h5 style="font-family: 'Roboto Slab', serif;color: black;"><a href="{% if project.live is None %}{% else %}{{project.live}}{% endif %}">{% if project.live is None %}{% else %}{{project.live}}{% endif %}</a></h5>
                 <a class="btn btn-primary" href="{% url 'onlyProject' project.id %}" ">View Project</a>
                 <br><br>
     
@@ -47,6 +54,28 @@
     <br><br>
     {% endfor %}
     </div>
+{% for data in profile %}
+<center>
+<div class="inp">
+<div class="row">
+<div class="col-md-6">
+<input type="text" name="" value="https://projectsbay.herokuapp.com/user/{{data.user}}" id="text" class="form-control col-md-9">
+</div>
+<div class="col-md-6">
+<a class="btn btn-success" onclick="copy()">Copy to Clipboard</a>
+
+</div>
+</div>
+<br><br><br>
+</div>
+{% endfor %}
+<script>
+function copy(){
+    var input = document.getElementById("text");
+    input.select();
+    document.execCommand("Copy")
+}
+</script>
 </div>
 
 {% endblock body %}

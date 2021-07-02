@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'ProjectsBay.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#Heroku - Deloyed
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
@@ -88,6 +89,19 @@ DATABASES = {
         }
     }
 }
+
+# # Local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'ProjectsBayLocal',
+#         'ENFORCE_SCHEMA': False,
+#         'CLIENT' : {
+#         'host' : f"mongodb+srv://prem:prem@projectsbaylocal.okp1d.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+#         }
+#     }
+# }
+
 
 
 # Password validation

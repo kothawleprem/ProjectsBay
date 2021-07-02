@@ -1,58 +1,95 @@
 {% extends 'base.html' %}
 {% block body %}
  <!--Intro Section-->
-<div class="mycontainer" style="background-color: #5352ED;">
+<div class="mycontainer" id="intro" style="background-color: #5352ED;">
   <div class="row">
     <div class="col-md-6">
-    <div class="text-area " style="padding-left: 100px;padding-top: 200px;">
+    <div class="text-area " style="padding-left: 100px;padding-top: 150px;color: white;">
      
-      <h1>Do you create a lot of Projects?</h1>
-      <h1>Share with the world with ProjectsBay</h1>
-      <h3>Only destination for all your Projects / Articles / Research Papers etc.</h3>
-      <h3><a href="">Start Now</a></h3>
-      <h3><a href="">What are the Steps?</a></h3>
-      <h3><a href="">Tell more about ProjectsBay!</a></h3>
-     
-      </div>
+      <h1 style="font-family: 'Source Sans Pro', sans-serif;">Do you create a lot of Projects?</h1>
+      <h2 style="font-family: 'Source Sans Pro', sans-serif;">Share them with the world Now!</h2>
+      <h3><a class="btn btn-light" href="{% url 'myProjects' %}">Start Now</a></h3>
+      <h3><a class="btn btn-warning" href="#steps">What are the Steps?</a></h3>
+      <h3><a class="btn btn-info" href="#what">Tell more about ProjectsBay!</a></h3>
+      <br><br><br>
+      <h5 style="font-family: 'Source Sans Pro', sans-serif;">ProjectsBay - Only destination for all your Projects / Articles / Research Papers etc.</h5>
+      <br><br>
+      
+        <div class="flowers">
+<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+<img src="/media/Flower.png" alt="" style="width: 150px;float: left;">
+</div>
+        </div>
+      
+
     </div>
     <div class="col-md-6">
       <center><img src="/media/intro_img.png" style="width: 475px;padding-top: 150px;" alt=""></center>
+      
     
     <br><br><br><br><br><br><br><br>
     </div>
   </div>
 </div>
 <!--What Section-->
-<div class="mycontainer" style="background-color: #FF7F50;">
+<div class="mycontainer" id="what" style="background-color: #FF7F50;">
   <div class="row">
     <div class="col-md-6">
       <center><img src="/media/Sample 13.png" alt="" style="width: 500px;padding-top: 120px;"></center>
       
       <br><br><br><br><br><br>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" style="color: white;">
       <div class="text-area" style="padding-top: 125px;">
-      <center><h1>ProjectsBay</h1></center>
-      <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-      dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-      book.</h6>
+      <center><i><h1 style="font-family: 'Source Sans Pro', sans-serif;">"The old-style resume is dead; projects should speak for you."</h1></i></center>
+      <h3 style="font-family: 'Roboto Slab', serif;color: black;">Certifications help, but need to be verified with practical experience!</h3>
+      <h5 style="font-family: 'Roboto Slab', serif;color: black;">
+        For young technologists, it's time to bury those resume templates and get their hands "dirty" right from college, work on projects etc. And make these as the centrepiece of your resume.
+      </h5 >
+      <p style="font-family: 'Roboto Slab', serif;color: black;">Above information is from Times Of India &nbsp;<a class="btn btn-primary"
+        href="https://timesofindia.indiatimes.com/india/heres-why-the-old-style-resume-is-dying-in-tech/articleshow/81949205.cms"><i class="far fa-newspaper"></i>&nbsp;TOI
+        Document</a>
+      <a class="btn btn-primary" href="https://www.linkedin.com/posts/imthepk_another-reason-for-you-to-do-open-source-activity-6785873367363854336-SsQ0"><i class="fab fa-linkedin"> </i>&nbsp;Linkedin Post</a></p>
+      
+      <h5 style="font-family: 'Roboto Slab', serif;color: black;">
+        As it is important to create projects, sharing these and publicating it is also important. Here comes ProjectsBay for your help.
+      </h5>
+      <br><br>
+      <center>
+      <h5>
+          Create your projects and share them with the world with ProjectsBay
+          
+      </h5>
+      <a class="btn btn-primary" href="#steps">Show me the Steps!</a></center>
+     
       </div>
   </div>
 </div>
 <!--Steps-->
 
-<div class="mycontainer" style="background-color:white;">
-  <br><br><br><center><h1>Steps</h1></center><br><br>
+<div class="mycontainer" id="steps" style="background-color:white;">
+  <br><br><br><center><h1 style="font-family: 'Source Sans Pro', sans-serif;">Steps</h1></center><br><br>
   <div class="row justify-content-center">
     <div class="col-md-3">
       <center>
       <div class="card" style="border-radius: 20px;width: 300px;height: 500px;border-color: blue;box-shadow: 5px 10px cyan;" >
           <br>
           <img src="/media/card1.png" alt="" style="height: 225px;">
-          <h3>Get In</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-          dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-          book.</p>
+          <h3 style="font-family: 'Source Sans Pro', sans-serif;">Get In</h3>
+          <p style="font-family: 'Roboto Slab', serif;color: black;">
+            <ul style="font-family: 'Roboto Slab', serif;color: black;">
+              <li>
+                <a href="">Register</a> your self or <a href="">Login</a> to the application.
+              </li>
+              <li>
+                Complete and setup your Profile First.
+              </li>
+              <li>
+You are now ready to add your Projects.
+              </li>
+            </ul> </p>
       </div>
       </center>
       <br><br>
@@ -64,12 +101,18 @@
           style="border-radius: 20px;width: 300px;height: 500px;border-color: blue;box-shadow: 5px 10px cyan;">
             <br>
           <img src="/media/card2.png" alt="" style="height: 225px;">
-          <h3>Create</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard
-            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-            specimen
-            book.</p>
+          <h3 style="font-family: 'Source Sans Pro', sans-serif;">Create</h3>
+          <p style="font-family: 'Roboto Slab', serif;color: black;">
+            It's time to create the page you want to share.
+            <ul style="font-family: 'Roboto Slab', serif;color: black;">
+              <li>
+               Add your Projects one by one.
+              </li>
+              <li>
+                See your Projects and your Page. 
+              </li>
+            </ul>
+          </p>
         </div>
       </center>
       <br><br>
@@ -80,12 +123,14 @@
           style="border-radius: 20px;width: 300px;height: 500px;border-color: blue;box-shadow: 5px 10px cyan;">
           <br>
           <img src="/media/card3.png" alt="" style="height: 225px;">
-          <h3>Share</h3>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-            standard
-            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
-            specimen
-            book.</p>
+          <h3 style="font-family: 'Source Sans Pro', sans-serif;">Share</h3>
+          <p style="font-family: 'Roboto Slab', serif;color: black;">
+            Your projects page is ready and you can share it with anyone.
+          <ul style="font-family: 'Roboto Slab', serif;color: black;"> <li>
+            Your link would be projectsbay.herokuapp.com/user/"your_username"
+            </li>
+            </ul>
+          </p>
         </div>
       </center>
     </div>
@@ -93,12 +138,28 @@
   <br><br><br><br><br><br>
 </div>
 
-<div class="mycontainer" style="background-color: #FFA502;">
+<div class="mycontainer" id="about" style="background-color: #FFA502;">
   <br><br><br><br>
   <div class="row">
     <div class="col-md-6">
+      <br><br><br><br>
       <div class="text-area" style="padding-top: 50px;padding-left: 50px;">
-        <center><h1>About Me & This Project!</h1></center>
+        <center><h1  style="font-family: 'Source Sans Pro', sans-serif;" >About Me & This Project!</h1></center>
+        <h4 style="font-family: 'Roboto Slab', serif;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This Project is being created in the 48 hours TECHNOTHON 1.0, A Hackathon Championship Organized by Amity University Mumbai.</h4>
+        
+        <h5 style="font-family: 'Roboto Slab', serif;color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          Myself Prem Kothawle,Tech enthusiast in love with Programming, currently pursuing Bachelors
+          of Engineering in the field of Information Technology.
+        </h5>
+        <br>
+        <h5>
+          <center>
+          <a class="btn btn-primary" href="https://github.com/kothawleprem"><i class="fab fa-github-square"> </i>&nbsp;Github</a>
+          <a class="btn btn-primary" href="https://in.linkedin.com/public-profile/in/premkothawle?challengeId=AQGGrVILuc7mNQAAAXdIXRqTv00S5rmv_j21Vz_wRu8nQDt14KyNpn4hUdXcizuLx17BkvKyp97b-AttVulTKk_tZaVB0qZbUg&submissionId=98038d91-ee5b-5e16-1547-bd78670a3a16"><i class="fab fa-linkedin"> </i>&nbsp;Linkedin</a>
+          <a class="btn btn-primary" href=""><i class="fab fa-product-hunt"> </i>&nbsp;ProjectsBay</a>
+          </center>
+        </h5>
+        
       </div>
      
     </div>

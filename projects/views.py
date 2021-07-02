@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate,login, logout
 import requests
 import os
 
+from bs4 import BeautifulSoup
+
 # Create your views here.
 def home(request):
     pas = os.environ.get('EMAIL_PASSWORD')
@@ -56,9 +58,6 @@ def profile(request):
             portfolio = form.cleaned_data['portfolio']
             email = request.user.email
             github = form.cleaned_data['github']
-            myapi = f"https://api.github.com/users/{github}"
-            json_data = requests.get(myapi).json()
-            print(json_data)
             client_profile = Client(user=usr,name=name,phone=phone,age=age,address=address,profession=profession,organization=organization,ctag=ctag,portfolio=portfolio,email=email)
             client_profile.save()
             return redirect('home')
@@ -123,10 +122,21 @@ def viewProjects(request,pk):
     cid = User.objects.filter(username=pk)
     projects = Project.objects.filter(user=cid[0])
     profile = Client.objects.filter(user=cid[0])
-    print(profile)
+    try:
+        github = Client.objects.filter(user=cid[0]).values('github')
+        for i in github:
+            guname = i['github']  
+        github_html = requests.get(f'https://github.com/{guname}').text
+        soup = BeautifulSoup(github_html, "html.parser")
+        avatar_url = soup.find_all('img',class_='avatar')
+        img = avatar_url[4].get('src')
+    except:
+        img = "/media/profile.png"
+    print(img)
     context = {
         'profile' : profile,
-        'projects' : projects
+        'projects' : projects,
+        'img' : img
     }
     return render(request,'projects/viewProjects.html',context)
 
